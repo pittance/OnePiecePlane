@@ -15,14 +15,10 @@ module fuselage() {
     translate([0,-15,0]) {
         difference() {
             union(){
-                difference() {
-                    translate([0,0,7.8])rotate([-90,0,0])rotate_extrude($fn=50)translate([-halfWidth,0,0])import("plane_001.dxf", layer="Fuselage");
-                    scale([1.4,lenScale,1.4])translate([xShift,yShift,zShift])rotate([-90,0,0])rotate_extrude($fn=50)translate([-halfWidth,0,0])import("plane_001.dxf", layer="Fuselage");
-                    scale([1.4,lenScale,1.4])translate([-xShift,yShift,zShift])rotate([-90,0,0])rotate_extrude($fn=50)translate([-halfWidth,0,0])import("plane_001.dxf", layer="Fuselage");
-                }
+                translate([0,-2,7.8])rotate([-90,0,0])rotate_extrude($fn=50)translate([-halfWidth,0,0])import("plane_001.dxf", layer="Fuselage");
                 rotate([0,-90,0])translate([-halfWidth,0,-(0.4*6)/2])linear_extrude(0.4*6) import("plane_001.dxf", layer="Spine");
             }
-//            rotate([-90,0,0])translate([0,-7.8,83])cylinder(d=2.8,$fn=10,h=80);
+//            rotate([0,-90,0])translate([-halfWidth,-15,-5])linear_extrude(10)import("plane_001.dxf", layer="LauncherSlot");
         }
     }
 }
